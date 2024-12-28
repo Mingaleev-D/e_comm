@@ -1,14 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
    xmlns:tools="http://schemas.android.com/tools"
    android:layout_width="match_parent"
    android:layout_height="match_parent"
    tools:context=".ui.fragments.AccountOptionsFragment">
 
-   <!-- TODO: Update blank fragment layout -->
-   <TextView
+   <ImageView
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:text="@string/hello_blank_fragment" />
+      android:scaleType="centerCrop"
+      android:src="@drawable/blury_background" />
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <TextView
+         android:id="@+id/tvAppName"
+         style="@style/h3"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="50dp"
+         android:drawablePadding="6dp"
+         android:text="MyApp"
+         android:textStyle="bold"
+         app:drawableStartCompat="@drawable/ic_kleine_shape"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/guidelineAccountOptionsTop" />
+
+      <TextView
+         android:id="@+id/tvRightAddressForShoppingAccountOptions"
+         style="@style/h4"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="52dp"
+         android:gravity="center"
+         android:text="Покупки в любой день"
+         android:textAlignment="center"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/tvAppName" />
+
+      <TextView
+         android:id="@+id/tvRightAddressForShoppingText"
+         style="@style/h2"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="15dp"
+         android:gravity="center"
+         android:text="Теперь очень легко и удобно\nсделать покупки в любом месте\nнаилучшего качества среди все\nпродуктов в интернете"
+         android:textAlignment="center"
+         app:layout_constraintEnd_toEndOf="@+id/tvRightAddressForShoppingAccountOptions"
+         app:layout_constraintStart_toStartOf="@+id/tvRightAddressForShoppingAccountOptions"
+         app:layout_constraintTop_toBottomOf="@+id/tvRightAddressForShoppingAccountOptions" />
+
+
+      <androidx.appcompat.widget.AppCompatButton
+         android:id="@+id/btnRegisterAccountOptionsRegister"
+         style="@style/blueButtonStyle"
+         android:layout_width="200dp"
+         android:layout_height="55dp"
+         android:layout_marginTop="60dp"
+         android:text="Регистрация"
+         app:cornerRadius="8dp"
+         app:layout_constraintEnd_toEndOf="@+id/tvRightAddressForShoppingText"
+         app:layout_constraintStart_toStartOf="@+id/tvRightAddressForShoppingText"
+         app:layout_constraintTop_toBottomOf="@+id/tvRightAddressForShoppingText" />
+
+
+      <androidx.appcompat.widget.AppCompatButton
+         android:id="@+id/btnRightAddressForShopping"
+         style="@style/whiteButtonStyle"
+         android:layout_width="200dp"
+         android:layout_height="55dp"
+         android:layout_marginTop="20dp"
+         android:text="Войти"
+         app:cornerRadius="8dp"
+         app:layout_constraintEnd_toEndOf="@+id/tvRightAddressForShoppingText"
+         app:layout_constraintStart_toStartOf="@+id/tvRightAddressForShoppingText"
+         app:layout_constraintTop_toBottomOf="@+id/btnRegisterAccountOptionsRegister" />
+
+      <androidx.constraintlayout.widget.Guideline
+         android:id="@+id/guidelineAccountOptionsTop"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         app:layout_constraintGuide_begin="228dp" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
