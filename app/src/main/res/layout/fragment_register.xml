@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   tools:context=".ui.fragments.RegisterFragment">
+
+   <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scaleType="centerCrop"
+      android:src="@drawable/blury_background" />
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <TextView
+         android:id="@+id/tvAppNameRegister"
+         style="@style/h3"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="120dp"
+         android:drawablePadding="6dp"
+         android:text="MyApp"
+         android:textStyle="bold"
+         app:drawableStartCompat="@drawable/ic_kleine_shape"
+         app:layout_constraintStart_toStartOf="@id/guidelineRegisterLeft"
+         app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+         android:id="@+id/tvRegister"
+         style="@style/h4"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:text="Регистрация"
+         android:textAlignment="textStart"
+         app:layout_constraintStart_toStartOf="@+id/guidelineRegisterLeft"
+         app:layout_constraintTop_toBottomOf="@+id/tvAppNameRegister" />
+
+      <TextView
+         android:id="@+id/tvTextRegister"
+         style="@style/h2"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:text="У Вас есть учетная запись\nдля входа? Войти"
+         android:textAlignment="textStart"
+         app:layout_constraintStart_toStartOf="@+id/guidelineRegisterLeft"
+         app:layout_constraintTop_toBottomOf="@+id/tvRegister" />
+
+      <EditText
+         android:id="@+id/etNameRegister"
+         android:layout_width="0dp"
+         android:layout_height="45dp"
+         app:layout_constraintStart_toStartOf="@id/guidelineRegisterLeft"
+         app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
+         style="@style/editText"
+         android:layout_marginTop="35dp"
+         android:hint="имя"
+         android:inputType="text"
+         app:layout_constraintTop_toBottomOf="@+id/tvTextRegister"/>
+
+      <EditText
+         android:id="@+id/etSurnameRegister"
+         android:layout_width="0dp"
+         android:layout_height="45dp"
+         app:layout_constraintStart_toStartOf="@id/guidelineRegisterLeft"
+         app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
+         style="@style/editText"
+         android:layout_marginTop="15dp"
+         android:hint="фамилия"
+         android:inputType="text"
+         app:layout_constraintTop_toBottomOf="@+id/etNameRegister"/>
+
+      <EditText
+         android:id="@+id/etEmailRegister"
+         android:layout_width="0dp"
+         android:layout_height="45dp"
+         app:layout_constraintStart_toStartOf="@id/guidelineRegisterLeft"
+         app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
+         style="@style/editText"
+         android:layout_marginTop="15dp"
+         android:hint="email"
+         android:inputType="textEmailAddress"
+         app:layout_constraintTop_toBottomOf="@+id/etSurnameRegister"/>
+
+      <EditText
+         android:id="@+id/etPasswordRegister"
+         android:layout_width="0dp"
+         android:layout_height="45dp"
+         app:layout_constraintStart_toStartOf="@id/guidelineRegisterLeft"
+         app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
+         style="@style/editText"
+         android:layout_marginTop="15dp"
+         android:hint="password"
+         android:inputType="textPassword"
+         app:layout_constraintTop_toBottomOf="@+id/etEmailRegister"/>
+
+      <androidx.appcompat.widget.AppCompatButton
+         android:id="@+id/btnRegister"
+         style="@style/blueButtonStyle"
+         android:layout_width="0dp"
+         android:layout_height="55dp"
+         android:layout_marginTop="60dp"
+         android:text="Регистрация"
+         app:cornerRadius="8dp"
+         app:layout_constraintEnd_toEndOf="@+id/guidelineRegisterRight"
+         app:layout_constraintStart_toStartOf="@+id/guidelineRegisterLeft"
+         app:layout_constraintTop_toBottomOf="@+id/etPasswordRegister" />
+
+
+      <ImageView
+         android:id="@+id/googleRegister"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="18dp"
+         android:src="@drawable/google_login"
+         app:layout_constraintEnd_toEndOf="@+id/guidelineRegisterRight"
+         app:layout_constraintStart_toStartOf="@+id/guidelineRegisterLeft"
+         app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+
+      <TextView
+         android:id="@+id/textView"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="google"
+         app:layout_constraintBottom_toBottomOf="@+id/googleRegister"
+         app:layout_constraintEnd_toEndOf="@+id/googleRegister"
+         app:layout_constraintStart_toStartOf="@+id/googleRegister"
+         app:layout_constraintTop_toTopOf="@+id/googleRegister" />
+
+
+
+      <androidx.constraintlayout.widget.Guideline
+         android:id="@+id/guidelineRegisterLeft"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         app:layout_constraintGuide_begin="20dp"
+         app:layout_constraintGuide_percent="0.09" />
+
+
+      <androidx.constraintlayout.widget.Guideline
+         android:id="@+id/guidelineRegisterRight"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         app:layout_constraintGuide_begin="20dp"
+         app:layout_constraintGuide_percent="0.91" />
+
+      <ProgressBar
+         android:id="@+id/progressBarRegister"
+         style="?android:attr/progressBarStyle"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="16dp"
+         android:visibility="gone"
+         app:layout_constraintEnd_toStartOf="@+id/guidelineRegisterRight"
+         app:layout_constraintStart_toStartOf="@+id/guidelineRegisterLeft"
+         app:layout_constraintTop_toBottomOf="@+id/googleRegister" />
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
