@@ -123,13 +123,14 @@
          app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
       <TextView
+         android:id="@+id/textView"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:text="google"
+         app:layout_constraintBottom_toBottomOf="@+id/googleRegister"
          app:layout_constraintEnd_toEndOf="@+id/googleRegister"
          app:layout_constraintStart_toStartOf="@+id/googleRegister"
-         app:layout_constraintTop_toTopOf="@+id/googleRegister"
-         app:layout_constraintBottom_toBottomOf="@+id/googleRegister" />
+         app:layout_constraintTop_toTopOf="@+id/googleRegister" />
 
 
 
@@ -149,6 +150,17 @@
          android:orientation="vertical"
          app:layout_constraintGuide_begin="20dp"
          app:layout_constraintGuide_percent="0.91" />
+
+      <ProgressBar
+         android:id="@+id/progressBarRegister"
+         style="?android:attr/progressBarStyle"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="16dp"
+         android:visibility="gone"
+         app:layout_constraintEnd_toStartOf="@+id/guidelineRegisterRight"
+         app:layout_constraintStart_toStartOf="@+id/guidelineRegisterLeft"
+         app:layout_constraintTop_toBottomOf="@+id/googleRegister" />
    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
