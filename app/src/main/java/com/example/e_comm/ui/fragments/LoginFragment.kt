@@ -13,6 +13,7 @@ import com.example.e_comm.R
 import com.example.e_comm.data.utils.Resource
 import com.example.e_comm.databinding.FragmentLoginBinding
 import com.example.e_comm.ui.ShoppingActivity
+import com.example.e_comm.ui.dialog.setupBottomSheetDialog
 import com.example.e_comm.ui.vm.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -44,6 +45,29 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             }
         }
 
+        binding.tvForgotPasswordLogin.setOnClickListener {
+            setupBottomSheetDialog { email ->
+                viewModel.resetPassword(email)
+            }
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.resetPassword.collect {
+                when(it){
+                    is Resource.Error -> {
+                        Toast.makeText(requireContext(), "${it.message}", Toast.LENGTH_SHORT).show()
+                    }
+                    is Resource.Loading -> {
+
+                    }
+                    is Resource.Success -> {
+                        Toast.makeText(requireContext(), "${it.data}", Toast.LENGTH_SHORT).show()
+                    }
+                    else -> Unit
+                }
+            }
+        }
+
         lifecycleScope.launchWhenStarted {
             viewModel.login.collect {
                 when (it) {
@@ -64,7 +88,6 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
                     else -> Unit
                 }
-
             }
         }
     }
