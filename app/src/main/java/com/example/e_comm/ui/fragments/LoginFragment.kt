@@ -30,10 +30,12 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     ): View {
         binding = FragmentLoginBinding.inflate(layoutInflater)
         return binding.root
-
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(
+           view: View,
+           savedInstanceState: Bundle?
+    ) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
@@ -53,16 +55,18 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
         lifecycleScope.launchWhenStarted {
             viewModel.resetPassword.collect {
-                when(it){
+                when (it) {
                     is Resource.Error -> {
                         Toast.makeText(requireContext(), "${it.message}", Toast.LENGTH_SHORT).show()
                     }
-                    is Resource.Loading -> {
 
+                    is Resource.Loading -> {
                     }
+
                     is Resource.Success -> {
                         Toast.makeText(requireContext(), "${it.data}", Toast.LENGTH_SHORT).show()
                     }
+
                     else -> Unit
                 }
             }
@@ -75,10 +79,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                         Toast.makeText(requireContext(), "${it.message}", Toast.LENGTH_SHORT).show()
                     }
 
-                    is Resource.Loading -> {
-
-                    }
-
+                    is Resource.Loading -> {}
                     is Resource.Success -> {
                         Intent(requireActivity(), ShoppingActivity::class.java).also { intent ->
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
