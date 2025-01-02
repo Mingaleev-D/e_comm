@@ -4,13 +4,13 @@ plugins {
 
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
-    alias(libs.plugins.google.gms.google.services)
     id 'com.google.devtools.ksp'
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
     namespace 'com.example.e_comm'
-    compileSdk 35
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.e_comm"
@@ -37,6 +37,7 @@ android {
     }
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 }
 
@@ -66,4 +67,10 @@ dependencies {
     implementation("androidx.navigation:navigation-runtime-ktx:2.8.5")
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.8.5")
+
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+
+
 }
