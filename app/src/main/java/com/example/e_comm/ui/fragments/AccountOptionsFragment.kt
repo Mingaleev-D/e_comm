@@ -25,9 +25,11 @@ class AccountOptionsFragment : Fragment(R.layout.fragment_account_options) {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(
+           view: View,
+           savedInstanceState: Bundle?
+    ) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.apply {
             btnRegisterAccountOptionsRegister.setOnClickListener {
                 findNavController().navigate(R.id.action_accountOptionsFragment_to_registerFragment)
@@ -38,6 +40,4 @@ class AccountOptionsFragment : Fragment(R.layout.fragment_account_options) {
             }
         }
     }
-
-
 }
